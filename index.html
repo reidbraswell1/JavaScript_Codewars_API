@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript APIs</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main id="main">
+      <div>
+        <h1>JavaScript APIs</h1>
+        <p>
+          Open the Browser Console to view your work (Right-Click => Inspect or
+          fn+F12)
+        </p>
+        <div id="inputContainer">
+          <!-- Add label, input, and button HERE -->
+          <form
+            id="exercise-form"
+            action="javascript:controller(gifSearch.value,theme.value)"
+            method="POST"
+            onsubmit="return validateForm(gifSearch.value)"
+          >
+            <label for="gifSearch">Giphy Search</label>
+            <input id="gifSearch" type="text" required />
+            <label for="theme">Theme</label>
+            <select id="theme" name="theme">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+            <button id="submit-button" type="submit">Submit</button>
+          </form>
+        </div>
+
+        <div id="image-container">
+          <p id="returned-line"></p>
+          <table id="codewars-table">
+            <tbody>
+              <tr>
+                <td class="td-label">User Name:</td>
+                <td id="user-name" class="td-data"></td>
+              </tr>
+              <tr>
+                <td class="td-label">Honor:</td>
+                <td id="honor" class="td-data" style="width:35%"></td>
+              </tr>
+              <tr>
+                <td class="td-label">Clan:</td>
+                <td id="clan" class="td-data"></td>
+              </tr>
+              <tr>
+                <td class="td-label">Leader Board Position:</td>
+                <td id="leader-board" class="td-data"></td>
+              </tr>
+              <tr>
+                <td class="td-label">Languages:</td>
+                <td id="languages" class="td-data"></td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="error-line"></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
