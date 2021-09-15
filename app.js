@@ -78,18 +78,23 @@ function controller(searchKey, theme) {
       }
       console.log(response.ranks.languages);
       let languages = response.ranks.languages;
-      let keys = Object.keys(languages);
-      console.log("obj contains " + keys.length + " keys: " + keys);
-      /* response will contain an array of objects
-         inside the array of objects we will obtain the 
-         url to display.
-      */
+      let languageKeys = Object.keys(languages).sort();
+      console.log(
+        "obj contains " + languageKeys.length + " keys: " + languageKeys
+      );
+      let languageObj = response.ranks.languages;
       document.getElementById("user-name").innerText = response.username;
       document.getElementById("honor").innerText = response.honor;
       document.getElementById("clan").innerText = response.clan;
       document.getElementById("leader-board").innerText =
         response.leaderboardPosition;
-      populateLanguage(languages);
+      populateLanguage(languageKeys);
+      for (let i = 0; i < languageKeys.length; i++) {
+        console.log(`${languageKeys[i]}=`);
+        console.log(response.ranks.languages[languageKeys[i]]);
+        let lang = response.ranks.languages[languageKeys[i]];
+        Object.values(lang).forEach((val) => console.log(val));
+      }
       /* Dont reset the select box.
          Want to keep the current selected value of the box
          since an even listener is being used to change the theme 
@@ -169,12 +174,11 @@ function populateLanguage(languages) {
 
   const errorLine = document.getElementById(errorLineId);
   errorLine.innerText = "";
-  let keys = Object.keys(languages);
   let keys2 = "";
-  for (let i = 0; i < keys.length; i++) {
-    keys2 += `${keys[i]}, `;
+  for (let i = 0; i < languages.length; i++) {
+    keys2 += `${languages[i]}, `;
   }
-  document.getElementById("languages").innerText = keys2;
+  document.getElementById("languages").innerText = keys2.trim();
   console.log("---End populateImages()---");
 }
 
