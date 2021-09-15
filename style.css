@@ -59,6 +59,13 @@ label {
   color: black;
 }
 
+#codewars-language-table {
+  table-layout: fixed;
+  width: 60%;
+  margin-left: 15%;
+  color: black;
+}
+
 #td-label {
   width: 15%;
   text-align: right;
