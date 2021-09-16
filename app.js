@@ -89,12 +89,32 @@ function controller(searchKey, theme) {
       document.getElementById("leader-board").innerText =
         response.leaderboardPosition;
       populateLanguage(languageKeys);
+      let codewarsLanguageTable = document.getElementById("codewars-language-table");
       for (let i = 0; i < languageKeys.length; i++) {
         console.log(`${languageKeys[i]}=`);
         console.log(response.ranks.languages[languageKeys[i]]);
-        let lang = response.ranks.languages[languageKeys[i]];
-        Object.values(lang).forEach((val) => console.log(val));
+        let row = document.createElement("tr");
+        let lang = document.createElement("td");
+        lang.innerText = languageKeys[i];
+        row.appendChild(lang);
+        let rank = document.createElement("td");
+        rank.innerText = response.ranks.languages[languageKeys[i]].rank;
+        row.appendChild(rank);
+        let name = document.createElement("td");
+        name.innerText = response.ranks.languages[languageKeys[i]].name;
+        row.appendChild(name);
+        let color = document.createElement("td");
+        color.innerText = response.ranks.languages[languageKeys[i]].color;
+        row.appendChild(color);
+        let score = document.createElement("td");
+        score.innerText = response.ranks.languages[languageKeys[i]].score;
+        row.appendChild(score);
+        codewarsLanguageTable.appendChild(row);
+
+        //let lang = response.ranks.languages[languageKeys[i]];
+        //Object.values(lang).forEach((val) => console.log(val));
       }
+
       /* Dont reset the select box.
          Want to keep the current selected value of the box
          since an even listener is being used to change the theme 
