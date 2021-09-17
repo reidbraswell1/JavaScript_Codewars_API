@@ -59,6 +59,20 @@ label {
   color: black;
 }
 
+#codewars-table th {
+  color: white;
+  background-color: #04aa6d;
+  text-align: left;
+}
+
+#codewars-table #property {
+  width: 25%
+}
+
+#codewars-table #value {
+  width: 35%;
+}
+
 #codewars-language-table {
   table-layout: fixed;
   width: 60%;
@@ -74,6 +88,7 @@ label {
 #codewars-language-table th {
   color: white;
   background-color: #04aa6d;
+  width: 12%;
 }
 
 #codewars-language-table tr:nth-child(even) {
@@ -82,17 +97,6 @@ label {
 
 #codewars-language-table td:nth-child(n+2){
   text-align: center;
-}
-
-
-#td-label {
-  width: 15%;
-  text-align: right;
-}
-
-#td-data {
-  width: 45%; 
-  overflow-wrap: normal;
 }
 
 #returned-line {
