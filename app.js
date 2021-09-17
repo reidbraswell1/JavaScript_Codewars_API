@@ -198,6 +198,34 @@ function populateLanguage(languages) {
   for (let i = 0; i < languages.length; i++) {
     keys2 += `${languages[i]}, `;
   }
+  keys2 = keys2.slice(0,keys2.length-2);
+  console.log(keys2);
+  document.getElementById("languages").innerText = keys2.trim();
+  console.log("---End populateImages()---");
+}
+
+function populateGeneralInformation(object) {
+  console.log("---Begin populateGeneralInformation()---");
+  console.log(`Parameters: response=${object}`);
+  console.log(`Parameters: response=`);
+  console.log(object);
+
+  const errorLineId = "error-line";
+  const returnedLineId = "returned-line";
+  const errorColor = "red";
+  const successColor = "green";
+  const visibility = "visible";
+
+  const errorLine = document.getElementById(errorLineId);
+  errorLine.innerText = "";
+
+  let languages = object.ranks.languages;
+  let languageKeys = Object.keys(languages).sort();
+  let keys2 = "";
+  for (let i = 0; i < languages.length; i++) {
+    keys2 += `${languages[i]}, `;
+  }
+  keys2 = keys2.slice(0,keys2.length-2);
   document.getElementById("languages").innerText = keys2.trim();
   console.log("---End populateImages()---");
 }
