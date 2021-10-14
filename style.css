@@ -51,6 +51,10 @@ label {
   font-size: 1.5rem;
   font-weight: 900;
 }
+ 
+#error-line {
+  margin-left: 25%;
+}
 
 #image-container {
   max-width: 40rem;
@@ -83,6 +87,7 @@ label {
   table-layout: fixed;
   width: 60%;
   margin-left: 15%;
+  margin-top: 5%;
   color: black;
   border-collapse: collapse;
 }
