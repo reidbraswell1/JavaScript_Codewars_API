@@ -1,3 +1,3 @@
 # Codewars API 
 
-This is a simple `HTML`, `CSS` and `JavaScript` interface to the public [Codewars API](https://www.codewars.com/api/v1/users). (You should append the user name that you are looking for to the end of the url). For example "https://www.codewars.com/v1/users/someusername". It utilizes the `JavaScript` method `fetch` to connect to the API. The CodeWars API is a very simple and minimalistic API with no API key. 
+This is a simple `HTML`, `CSS` and `JavaScript` interface to the public [Codewars API](https://dev.codewars.com/#introduction). (You should append the user name that you are looking for to the end of the url). For example "https://www.codewars.com/v1/users/someusername". It utilizes the `JavaScript` method `fetch` to connect to the API. The CodeWars API is a very simple and minimalistic API with no API key. 
